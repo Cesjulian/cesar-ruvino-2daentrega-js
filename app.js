@@ -48,27 +48,36 @@ function carrito(){
 
 function pago(){
 
-    let pago = Number(prompt(`\n como te gustaría pagar?
-    \n ingrese numero correspondiente a forma de pago que va a utilizar
-    \n 1: con efectivo
-    \n 2: con tarjeta
-    \n 3: mercadopago`));
+    do {
 
-    if (pago == "1"){
-        alert("presentarse por caja para abonar el total")
-    } 
-    else if (pago == "2"){
-        prompt("ingrese los datos de la tarjeta para finalizar compra")
-        alert("Felicidades, pagaste con tarjeta")
-    } 
-    else if (pago == "3"){
-        alert("usted va a pagar con dinero disponible en cuenta")
-        alert("felicidades, Pagaste con Mercadopago")
-    } 
-    else {
-        alert("no ingresó ningún método de pago")
-    }
+        let pago = Number(prompt(`\n como te gustaría pagar?
+        \n ingrese numero correspondiente a forma de pago que va a utilizar
+        \n 1: con efectivo
+        \n 2: con tarjeta
+        \n 3: mercadopago`));
 
+        if (pago == "1"){
+            alert("presentarse por caja para abonar el total")
+            condition=true;
+        } 
+        else if (pago == "2"){
+            prompt("ingrese los datos de la tarjeta para finalizar compra")
+            alert("Felicidades, pagaste con tarjeta")
+            condition=true;
+        } 
+        else if (pago == "3"){
+            alert("usted va a pagar con dinero disponible en cuenta")
+            alert("felicidades, Pagaste con Mercadopago")
+            condition=true;
+        } 
+        else {
+            alert("no ingresó ningún método de pago, por favor ingrese uno")
+           condition=false;
+        }
+
+    } while (condition != true);
+    
+ 
     alert("MUCHAS GRACIAS POR TU COMPRA, TE ESPERAMOS DE NUEVO!")
 } 
 
